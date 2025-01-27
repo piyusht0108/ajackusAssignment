@@ -1,0 +1,44 @@
+.details-container {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+}
+
+.id {
+    margin-right: 10px;
+    font-family: 'Roboto';
+    font-size: 20px;
+    margin: 0;
+}
+
+.name {
+    font-family: 'Roboto';
+    font-size: 24px;
+    margin: 0;
+
+}
+
+.email {
+    font-family: 'Roboto';
+    font-size: 18px;
+    margin: 0;
+}
+
+.dept {
+    font-family: 'Roboto';
+    font-size: 15px;
+    margin: 0;
+}
+
+.function-button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.function-button {
+    background-color: transparent;
+    outline: none;
+    border: 0;
+    cursor: pointer;
+}
