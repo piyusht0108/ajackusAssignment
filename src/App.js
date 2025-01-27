@@ -30,9 +30,10 @@ class App extends Component {
       email,
       department
     }
-    const filteredList = userDetailsList.filter(eachItem => eachItem.user_id === userId)
+    const filteredList = userDetailsList.filter(eachItem => eachItem.user_id.toString() === userId)
+    console.log(filteredList)
     if (filteredList.length === 0) {
-      this.setState(prevState => ({userDetailsList: [...prevState.userDetailsList, userDetails]}))
+      this.setState(prevState => ({userDetailsList: [...prevState.userDetailsList, userDetails], firstName: '', lastName: '', userId: '', email: '', department: '', errorMsg: ''}))
     } else {
       this.setState({errorMsg: 'User ID Aleady Exists'})
     }
@@ -134,7 +135,7 @@ class App extends Component {
     }
 
     const filteredList = userDetailsList.filter(eachItem => {
-      if (eachItem.first_name.toLowerCase().includes(searchInput) || eachItem.last_name.toLowerCase().includes(searchInput)) {
+      if (eachItem.first_name.toLowerCase().includes(searchInput.toLocaleLowerCase()) || eachItem.last_name.toLowerCase().includes(searchInput.toLocaleLowerCase())) {
         return eachItem
       }
       return null
